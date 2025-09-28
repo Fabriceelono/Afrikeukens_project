@@ -1,0 +1,15 @@
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1.5rem 2rem;
+  background-color: $maincolor;
+  color: $white;
+  text-align: center;
+  font-family: $textfont;
+
+  p {
+    font-size: 17px;
+    margin: 0;
+  }
+}

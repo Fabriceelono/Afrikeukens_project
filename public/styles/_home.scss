@@ -1,0 +1,163 @@
+@mixin button(
+  $bg-color,
+  $text-color,
+  $padding: 0.8rem 2rem,
+  $border-top-left: 30px,
+  $border-top-right: 0px,
+  $border-bottom-right: 30px,
+  $border-bottom-left: 0px,
+  $font-size: 1.2rem
+) {
+  background-color: $secondcolor;
+  color: $text-color;
+  padding: $padding;
+  border-radius: $border-top-left $border-top-right $border-bottom-right
+    $border-bottom-left;
+  font-size: $font-size;
+  font-family: $textfont;
+  text-decoration: none;
+  font-weight: 600;
+  display: inline-block;
+  text-align: center;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background-color: lighten($bg-color, 10%);
+    transform: scale(1.05);
+  }
+}
+.home {
+  height: 80vh;
+  background: linear-gradient(rgba($maincolor, 0.6), rgba($secondcolor, 0.6)),
+    url("../assets/afrikeuken.jpg") center/cover no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+  .home-info {
+    max-width: 600px;
+    padding: 0 1rem;
+  }
+
+  h1 {
+    font-family: $textfont;
+    color: $white;
+    font-size: 40px;
+
+    .logo {
+      font-family: $logofont;
+      font-size: 50px;
+      color: $secondcolor;
+    }
+  }
+
+  p {
+    font-family: $textfont;
+    color: $white;
+    font-size: 18px;
+    margin: 1rem 0 2rem 0;
+  }
+
+  .btn {
+    @include button($secondcolor, black);
+  }
+}
+
+// contact
+.contact {
+  background-color: $thirdcolor;
+  padding: 4rem 2rem;
+  text-align: center;
+
+  h2 {
+    font-family: $logofont;
+    color: $maincolor;
+    font-size: 50px;
+    margin-bottom: 0.5rem;
+  }
+
+  p {
+    font-family: $textfont;
+    color: darken($maincolor, 20%);
+    font-size: 18px;
+    margin-bottom: 2rem;
+  }
+
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: stretch;
+    gap: 2rem;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .column {
+    flex: 1;
+    min-width: 300px;
+
+    img {
+      border-radius: 12px;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+    }
+
+    form {
+      background: lighten($thirdcolor, 5%);
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+      text-align: left;
+
+      label {
+        font-family: $textfont;
+        font-weight: 600;
+        color: $maincolor;
+        display: block;
+        margin: 1rem 0 0.5rem;
+      }
+
+      input[type="text"],
+      textarea {
+        width: 100%;
+        padding: 0.8rem 1rem;
+        border: 1px solid lighten($maincolor, 20%);
+        border-radius: 8px;
+        font-family: $textfont;
+        font-size: 1rem;
+        margin-bottom: 1rem;
+        transition: all 0.3s ease;
+
+        &:focus {
+          border-color: $maincolor;
+          outline: none;
+          box-shadow: 0 0 6px rgba($maincolor, 0.4);
+        }
+      }
+
+      textarea {
+        resize: none;
+      }
+
+      .btn {
+        @include button($maincolor, $white);
+        width: 100%;
+        margin-top: 1rem;
+      }
+    }
+  }
+
+  // Responsive for small screens
+  @media (max-width: 768px) {
+    .row {
+      flex-direction: column;
+    }
+    .column img {
+      height: 250px;
+    }
+  }
+}

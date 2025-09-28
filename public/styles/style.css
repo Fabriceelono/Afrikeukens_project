@@ -1,0 +1,564 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Arizonia&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap");
+header {
+  background-color: #0ead69;
+}
+header .logo a {
+  font-family: "Arizonia", cursive;
+  font-size: 70px;
+  color: #ffffff;
+  text-decoration: none;
+  margin-left: 50px;
+}
+header .logo a:hover {
+  text-shadow: 4px 4px 17px #ffd23f;
+}
+header .nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+  margin-right: 150px;
+}
+header .nav-links li a {
+  text-decoration: none;
+  color: white;
+  font-family: "Raleway", sans-serif;
+  font-weight: 500;
+  position: relative;
+  transition: color 0.3s ease;
+  font-size: 20px;
+}
+header .nav-links li a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 0%;
+  height: 2px;
+  background: #ffd23f;
+  transition: width 0.3s ease;
+}
+header .nav-links li a:hover {
+  color: #ffd23f;
+}
+header .nav-links li a:hover::after {
+  width: 100%;
+}
+header .nav-links.active {
+  display: flex;
+}
+header .burger {
+  display: none;
+  flex-direction: column;
+  gap: 6px;
+  margin-left: auto;
+  padding: 6px;
+  z-index: 60;
+  margin-right: 23px;
+}
+header .burger i {
+  font-size: 35px;
+  color: #ffffff;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+header .burger.toggle i {
+  transform: rotate(90deg);
+  color: #ffd23f;
+}
+@media (max-width: 850px) {
+  header .nav-links {
+    display: none;
+    flex-direction: column;
+    background: rgb(15.9090909091, 196.5909090909, 119.3181818182);
+    position: absolute;
+    top: 70px;
+    left: 265px;
+    width: 220px;
+    padding: 1rem;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
+    z-index: 50;
+  }
+  header .nav-links li {
+    margin: 10px 0;
+  }
+  header .nav-links li a {
+    color: #ffffff;
+    font-family: "Raleway", sans-serif;
+    font-size: 18px;
+    padding: 0.6rem 1rem;
+    border-radius: 8px;
+  }
+  header .nav-links li a:hover {
+    color: #ffd23f;
+  }
+  header .nav-links.active {
+    display: flex;
+    opacity: 1;
+    transform: translateY(0);
+    animation: slideDown 0.3s ease forwards;
+  }
+  @keyframes slideDown {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  header .burger {
+    display: flex;
+  }
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1.5rem 2rem;
+  background-color: #0ead69;
+  color: #ffffff;
+  text-align: center;
+  font-family: "Raleway", sans-serif;
+}
+footer p {
+  font-size: 17px;
+  margin: 0;
+}
+
+.home {
+  height: 80vh;
+  background: linear-gradient(rgba(14, 173, 105, 0.6), rgba(255, 210, 63, 0.6)), url("../assets/afrikeuken.jpg") center/cover no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.home .home-info {
+  max-width: 600px;
+  padding: 0 1rem;
+}
+.home h1 {
+  font-family: "Raleway", sans-serif;
+  color: #ffffff;
+  font-size: 40px;
+}
+.home h1 .logo {
+  font-family: "Arizonia", cursive;
+  font-size: 50px;
+  color: #ffd23f;
+}
+.home p {
+  font-family: "Raleway", sans-serif;
+  color: #ffffff;
+  font-size: 18px;
+  margin: 1rem 0 2rem 0;
+}
+.home .btn {
+  background-color: #ffd23f;
+  color: black;
+  padding: 0.8rem 2rem;
+  border-radius: 30px 0px 30px 0px;
+  font-size: 1.2rem;
+  font-family: "Raleway", sans-serif;
+  text-decoration: none;
+  font-weight: 600;
+  display: inline-block;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+.home .btn:hover {
+  background-color: rgb(255, 221.953125, 114);
+  transform: scale(1.05);
+}
+
+.contact {
+  background-color: #f7fff7;
+  padding: 4rem 2rem;
+  text-align: center;
+}
+.contact h2 {
+  font-family: "Arizonia", cursive;
+  color: #0ead69;
+  font-size: 50px;
+  margin-bottom: 0.5rem;
+}
+.contact p {
+  font-family: "Raleway", sans-serif;
+  color: rgb(6.3636363636, 78.6363636364, 47.7272727273);
+  font-size: 18px;
+  margin-bottom: 2rem;
+}
+.contact .row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: stretch;
+  gap: 2rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.contact .column {
+  flex: 1;
+  min-width: 300px;
+}
+.contact .column img {
+  border-radius: 12px;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+.contact .column form {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  text-align: left;
+}
+.contact .column form label {
+  font-family: "Raleway", sans-serif;
+  font-weight: 600;
+  color: #0ead69;
+  display: block;
+  margin: 1rem 0 0.5rem;
+}
+.contact .column form input[type=text],
+.contact .column form textarea {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  border: 1px solid rgb(50.5454545455, 238.4545454545, 158.0909090909);
+  border-radius: 8px;
+  font-family: "Raleway", sans-serif;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  transition: all 0.3s ease;
+}
+.contact .column form input[type=text]:focus,
+.contact .column form textarea:focus {
+  border-color: #0ead69;
+  outline: none;
+  box-shadow: 0 0 6px rgba(14, 173, 105, 0.4);
+}
+.contact .column form textarea {
+  resize: none;
+}
+.contact .column form .btn {
+  background-color: #ffd23f;
+  color: #ffffff;
+  padding: 0.8rem 2rem;
+  border-radius: 30px 0px 30px 0px;
+  font-size: 1.2rem;
+  font-family: "Raleway", sans-serif;
+  text-decoration: none;
+  font-weight: 600;
+  display: inline-block;
+  text-align: center;
+  transition: all 0.3s ease;
+  width: 100%;
+  margin-top: 1rem;
+}
+.contact .column form .btn:hover {
+  background-color: rgb(17.8181818182, 220.1818181818, 133.6363636364);
+  transform: scale(1.05);
+}
+@media (max-width: 768px) {
+  .contact .row {
+    flex-direction: column;
+  }
+  .contact .column img {
+    height: 250px;
+  }
+}
+
+.about {
+  padding: 4rem 2rem;
+  background: linear-gradient(rgba(14, 173, 105, 0.05), rgba(14, 173, 105, 0.1));
+  text-align: center;
+}
+.about h2 {
+  font-family: "Arizonia", cursive;
+  font-size: 3.5rem;
+  color: #0ead69;
+  margin-bottom: 2rem;
+}
+.about h2 .logo {
+  color: #ffd23f;
+}
+.about .about-content {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 2rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.about .about-content .about-image {
+  flex: 1 1 300px;
+}
+.about .about-content .about-image img {
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+.about .about-content .about-text {
+  flex: 2;
+}
+.about .about-content .about-text p {
+  font-family: "Raleway", sans-serif;
+  font-size: 1.1rem;
+  color: rgb(2.5454545455, 31.4545454545, 19.0909090909);
+  line-height: 1.7;
+  margin-bottom: 1rem;
+  text-align: justify;
+}
+
+.team {
+  padding: 4rem 2rem;
+  background-color: #f7fff7;
+  text-align: center;
+}
+.team h2 {
+  font-family: "Arizonia", cursive;
+  font-size: 3.2rem;
+  color: #0ead69;
+  margin-bottom: 2.5rem;
+}
+.team .team-members {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.team .team-members .team-member {
+  background: #ffffff;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+.team .team-members .team-member:hover {
+  transform: translateY(-5px);
+}
+.team .team-members .team-member img {
+  width: 100%;
+  border-radius: 50%;
+  margin-bottom: 1rem;
+}
+.team .team-members .team-member h3 {
+  font-family: "Raleway", sans-serif;
+  font-size: 1.3rem;
+  color: #0ead69;
+  margin-bottom: 0.5rem;
+}
+.team .team-members .team-member p {
+  font-family: "Raleway", sans-serif;
+  color: rgb(6.3636363636, 78.6363636364, 47.7272727273);
+}
+
+.values {
+  padding: 4rem 2rem;
+  background: linear-gradient(rgba(14, 173, 105, 0.05), rgba(14, 173, 105, 0.1));
+  text-align: center;
+}
+.values h2 {
+  font-family: "Arizonia", cursive;
+  font-size: 3.2rem;
+  color: #0ead69;
+  margin-bottom: 3rem;
+}
+.values .values-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+.values .value-card {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 2rem 1.5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.values .value-card i {
+  color: #ffd23f;
+  margin-bottom: 1rem;
+}
+.values .value-card h3 {
+  font-family: "Arizonia", cursive;
+  font-size: 34px;
+  color: #0ead69;
+  margin-bottom: 0.5rem;
+}
+.values .value-card p {
+  font-family: "Raleway", sans-serif;
+  font-size: 1rem;
+  color: rgb(2.5454545455, 31.4545454545, 19.0909090909);
+  line-height: 1.5;
+}
+.values .value-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.open {
+  background: #0ead69;
+  color: #ffffff;
+  text-align: center;
+  padding: 2rem;
+  font-size: 23px;
+}
+.open a {
+  color: #ffd23f;
+  font-weight: bold;
+  text-decoration: underline;
+}
+.open a:hover {
+  color: rgb(255, 221.953125, 114);
+}
+
+@media (max-width: 850px) {
+  .about-content {
+    flex-direction: column;
+  }
+  .about-content .about-text,
+  .about-content .about-image {
+    flex: 1 1 100%;
+  }
+}
+.menu {
+  padding: 3rem 1rem;
+  background-color: #f7fff7;
+  text-align: center;
+}
+.menu h2 {
+  font-family: "Arizonia", cursive;
+  color: #0ead69;
+  font-size: 50px;
+  margin-bottom: 2rem;
+}
+.menu h2 .logo {
+  color: #ffd23f;
+}
+.menu .menu-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.menu .menu-card {
+  background: #ffffff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+.menu .menu-card:hover {
+  transform: translateY(-5px);
+}
+.menu .menu-card img {
+  width: 100%;
+  height: 180px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.menu .menu-card .menu-info {
+  padding: 1rem;
+}
+.menu .menu-card .menu-info .dish-name {
+  font-family: "Raleway", sans-serif;
+  font-size: 20px;
+  color: #0ead69;
+  margin-bottom: 0.5rem;
+}
+.menu .menu-card .menu-info .ingredients {
+  font-family: "Raleway", sans-serif;
+  font-size: 14px;
+  color: black;
+  margin-bottom: 1rem;
+}
+.menu .menu-card .menu-info .price {
+  font-weight: bold;
+  font-size: 18px;
+  color: #ffd23f;
+}
+
+.main-reservation {
+  height: 79vh;
+}
+.main-reservation h2 {
+  font-family: "Arizonia", cursive;
+  font-size: 3.2rem;
+  color: #0ead69;
+  margin-bottom: 2.5rem;
+  text-align: center;
+}
+
+#reservationForm {
+  max-width: 500px;
+  margin: 3rem auto;
+  background-color: rgba(255, 255, 255, 0.95);
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+#reservationForm label {
+  font-family: "Raleway", sans-serif;
+  font-weight: 500;
+  color: #0ead69;
+  font-size: 1rem;
+}
+#reservationForm input[type=text],
+#reservationForm input[type=email],
+#reservationForm input[type=date] {
+  padding: 0.8rem 1rem;
+  border-radius: 8px;
+  border: 1px solid rgb(97.7272727273, 242.2727272727, 180.4545454545);
+  font-family: "Raleway", sans-serif;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+#reservationForm input[type=text]:focus,
+#reservationForm input[type=email]:focus,
+#reservationForm input[type=date]:focus {
+  border-color: #ffd23f;
+  box-shadow: 0 0 5px rgba(255, 210, 63, 0.5);
+  outline: none;
+}
+#reservationForm .btn {
+  background-color: #ffd23f;
+  color: #ffffff;
+  padding: 0.8rem 2rem;
+  border-radius: 30px 0px 30px 0px;
+  font-size: 1.2rem;
+  font-family: "Raleway", sans-serif;
+  text-decoration: none;
+  font-weight: 600;
+  display: inline-block;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+#reservationForm .btn:hover {
+  background-color: rgb(255, 221.953125, 114);
+  transform: scale(1.05);
+}
+
+@media (max-width: 600px) {
+  #reservationForm {
+    padding: 1.5rem;
+    gap: 1rem;
+  }
+}/*# sourceMappingURL=style.css.map */

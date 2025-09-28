@@ -1,0 +1,130 @@
+@mixin nav {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+  margin-right: 150px;
+}
+header {
+  background-color: $maincolor;
+  .logo a {
+    font-family: $logofont;
+    font-size: 70px;
+    color: $white;
+    text-decoration: none;
+    margin-left: 50px;
+    &:hover {
+      text-shadow: 4px 4px 17px $secondcolor;
+    }
+  }
+  .nav-links {
+    @include nav;
+    li a {
+      text-decoration: none;
+      color: white;
+      font-family: $textfont;
+      font-weight: 500;
+      position: relative;
+      transition: color 0.3s ease;
+      font-size: 20px;
+
+      &::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -5px;
+        width: 0%;
+        height: 2px;
+        background: $secondcolor;
+        transition: width 0.3s ease;
+      }
+
+      &:hover {
+        color: $secondcolor;
+
+        &::after {
+          width: 100%;
+        }
+      }
+    }
+  }
+  .nav-links.active {
+    display: flex;
+  }
+  // burger button
+  .burger {
+    display: none;
+    flex-direction: column;
+    gap: 6px;
+    margin-left: auto;
+    padding: 6px;
+    z-index: 60;
+    margin-right: 23px;
+
+    i {
+      font-size: 35px;
+      color: $white;
+      transition: transform 0.3s ease, color 0.3s ease;
+    }
+
+    &.toggle i {
+      transform: rotate(90deg); // simple rotation when menu is open
+      color: $secondcolor; // change color on toggle
+    }
+  }
+  //   small screens
+  @media (max-width: 850px) {
+    .nav-links {
+      display: none;
+      flex-direction: column;
+      background: lighten($maincolor, 5%); // slightly lighter than header
+      position: absolute;
+      top: 70px;
+      left: 265px;
+      width: 220px;
+      padding: 1rem;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+      opacity: 0;
+      transform: translateY(-10px);
+      transition: all 0.3s ease;
+      z-index: 50;
+
+      li {
+        margin: 10px 0;
+
+        a {
+          color: $white;
+          font-family: $textfont;
+          font-size: 18px;
+          padding: 0.6rem 1rem;
+          border-radius: 8px;
+          &:hover {
+            color: $secondcolor;
+          }
+        }
+      }
+    }
+
+    .nav-links.active {
+      display: flex;
+      opacity: 1;
+      transform: translateY(0);
+      animation: slideDown 0.3s ease forwards;
+    }
+
+    @keyframes slideDown {
+      from {
+        opacity: 0;
+        transform: translateY(-10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .burger {
+      display: flex;
+    }
+  }
+}
