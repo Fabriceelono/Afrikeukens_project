@@ -1,6 +1,6 @@
 // Reservation Form
 .main-reservation {
-  height: 79vh;
+  height: 100vh;
   h2 {
     font-family: $logofont;
     font-size: 3.2rem;
@@ -30,7 +30,9 @@
 
   input[type="text"],
   input[type="email"],
-  input[type="date"] {
+  input[type="date"],
+  input[type="tel"],
+  input[type="number"] {
     padding: 0.8rem 1rem;
     border-radius: 8px;
     border: 1px solid lighten($maincolor, 30%);

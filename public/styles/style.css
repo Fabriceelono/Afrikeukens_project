@@ -494,7 +494,7 @@ footer p {
 }
 
 .main-reservation {
-  height: 79vh;
+  height: 100vh;
 }
 .main-reservation h2 {
   font-family: "Arizonia", cursive;
@@ -523,7 +523,9 @@ footer p {
 }
 #reservationForm input[type=text],
 #reservationForm input[type=email],
-#reservationForm input[type=date] {
+#reservationForm input[type=date],
+#reservationForm input[type=tel],
+#reservationForm input[type=number] {
   padding: 0.8rem 1rem;
   border-radius: 8px;
   border: 1px solid rgb(97.7272727273, 242.2727272727, 180.4545454545);
@@ -533,7 +535,9 @@ footer p {
 }
 #reservationForm input[type=text]:focus,
 #reservationForm input[type=email]:focus,
-#reservationForm input[type=date]:focus {
+#reservationForm input[type=date]:focus,
+#reservationForm input[type=tel]:focus,
+#reservationForm input[type=number]:focus {
   border-color: #ffd23f;
   box-shadow: 0 0 5px rgba(255, 210, 63, 0.5);
   outline: none;
